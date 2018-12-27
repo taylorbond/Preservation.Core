@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using Org.BouncyCastle.Bcpg;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 using Org.BouncyCastle.Crypto;
@@ -8,7 +7,6 @@ using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Math;
 using Org.BouncyCastle.Security;
 using Preservation.Core.Models;
-using Preservation.Core.Utilities;
 using Preservation.Crypto.Utilities;
 
 namespace Preservation.Crypto.CryptoLibraries
@@ -44,10 +42,6 @@ namespace Preservation.Crypto.CryptoLibraries
                 null,
                 new SecureRandom()
             );
-
-//            secretKey.ExtractPrivateKeyUtf8(passPhrase);
-//            var encTest = secretKey.PublicKey.GetEncoded();
-//            var theKey = Convert.ToBase64String(encTest);
 
             return new KeyPair
             {
